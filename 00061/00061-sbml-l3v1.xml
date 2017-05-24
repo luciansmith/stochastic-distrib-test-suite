@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00061">
     <listOfFunctionDefinitions>
-      <functionDefinition id="student_t">
+      <functionDefinition id="studentT">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
@@ -23,19 +23,11 @@
             <distrib:distribInput distrib:id="scale" distrib:index="1"/>
             <distrib:distribInput distrib:id="degreesOfFreedom" distrib:index="2"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <StudentTDistribution definition="http://www.uncertml.org/distributions">
-              <location>
-                <var varId="location"/>
-              </location>
-              <scale>
-                <var varId="scale"/>
-              </scale>
-              <degreesOfFreedom>
-                <var varId="degreesOfFreedom"/>
-              </degreesOfFreedom>
-            </StudentTDistribution>
-          </UncertML>
+          <distrib:studentTDistribution>
+            <distrib:location distrib:var="location"/>
+            <distrib:scale distrib:var="scale"/>
+            <distrib:degreesOfFreedom distrib:var="degreesOfFreedom"/>
+          </distrib:studentTDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>
@@ -70,7 +62,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> student_t </ci>
+                <ci> studentT </ci>
                 <cn type="integer"> 3 </cn>
                 <cn type="integer"> 2 </cn>
                 <cn type="integer"> 4 </cn>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00085">
     <listOfFunctionDefinitions>
       <functionDefinition id="predefined_gamma">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -9,16 +9,10 @@
           </lambda>
         </math>
         <distrib:drawFromDistribution>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <GammaDistribution definition="http://www.uncertml.org/distributions">
-              <shape>
-                <prVal>1</prVal>
-              </shape>
-              <scale>
-                <prVal>2</prVal>
-              </scale>
-            </GammaDistribution>
-          </UncertML>
+          <distrib:gammaDistribution>
+            <distrib:shape distrib:value="1"/>
+            <distrib:scale distrib:value="2"/>
+          </distrib:gammaDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00089">
     <listOfFunctionDefinitions>
-      <functionDefinition id="predefined_normal_with_variance">
+      <functionDefinition id="predefined_normal_var">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
@@ -15,16 +15,10 @@
           <distrib:listOfDistribInputs>
             <distrib:distribInput distrib:id="mean" distrib:index="0"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <NormalDistribution definition="http://www.uncertml.org/distributions">
-              <mean>
-                <var varId="mean"/>
-              </mean>
-              <variance>
-                <prVal>1.5</prVal>
-              </variance>
-            </NormalDistribution>
-          </UncertML>
+          <distrib:normalDistribution>
+            <distrib:mean distrib:var="mean"/>
+            <distrib:variance distrib:value="1.5"/>
+          </distrib:normalDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>
@@ -59,7 +53,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> predefined_normal_with_variance </ci>
+                <ci> predefined_normal_var </ci>
                 <cn type="integer"> 0 </cn>
               </apply>
             </math>

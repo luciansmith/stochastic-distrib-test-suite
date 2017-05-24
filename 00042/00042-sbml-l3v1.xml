@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00042">
     <listOfFunctionDefinitions>
       <functionDefinition id="uniform">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
-              <ci> minimum </ci>
+              <ci> min </ci>
             </bvar>
             <bvar>
-              <ci> maximum </ci>
+              <ci> max </ci>
             </bvar>
             <notanumber/>
           </lambda>
         </math>
         <distrib:drawFromDistribution>
           <distrib:listOfDistribInputs>
-            <distrib:distribInput distrib:id="minimum" distrib:index="0"/>
-            <distrib:distribInput distrib:id="maximum" distrib:index="1"/>
+            <distrib:distribInput distrib:id="min" distrib:index="0"/>
+            <distrib:distribInput distrib:id="max" distrib:index="1"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <UniformDistribution definition="http://www.uncertml.org/distributions">
-              <minimum>
-                <var varId="minimum"/>
-              </minimum>
-              <maximum>
-                <var varId="maximum"/>
-              </maximum>
-            </UniformDistribution>
-          </UncertML>
+          <distrib:uniformDistribution>
+            <distrib:minimum distrib:var="min"/>
+            <distrib:maximum distrib:var="max"/>
+          </distrib:uniformDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>

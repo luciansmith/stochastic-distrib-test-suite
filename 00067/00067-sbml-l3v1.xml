@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00067">
     <listOfFunctionDefinitions>
       <functionDefinition id="hypergeometric">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
-              <ci> numberOfSuccesses </ci>
+              <ci> nsuccess </ci>
             </bvar>
             <bvar>
-              <ci> numberOfTrials </ci>
+              <ci> nTrials </ci>
             </bvar>
             <bvar>
-              <ci> populationSize </ci>
+              <ci> popsize </ci>
             </bvar>
             <notanumber/>
           </lambda>
         </math>
         <distrib:drawFromDistribution>
           <distrib:listOfDistribInputs>
-            <distrib:distribInput distrib:id="numberOfSuccesses" distrib:index="0"/>
-            <distrib:distribInput distrib:id="numberOfTrials" distrib:index="1"/>
-            <distrib:distribInput distrib:id="populationSize" distrib:index="2"/>
+            <distrib:distribInput distrib:id="nsuccess" distrib:index="0"/>
+            <distrib:distribInput distrib:id="nTrials" distrib:index="1"/>
+            <distrib:distribInput distrib:id="popsize" distrib:index="2"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <HypergeometricDistribution definition="http://www.uncertml.org/distributions">
-              <numberOfSuccesses>
-                <var varId="numberOfSuccesses"/>
-              </numberOfSuccesses>
-              <numberOfTrials>
-                <var varId="numberOfTrials"/>
-              </numberOfTrials>
-              <populationSize>
-                <var varId="populationSize"/>
-              </populationSize>
-            </HypergeometricDistribution>
-          </UncertML>
+          <distrib:hypergeometricDistribution>
+            <distrib:numberOfSuccesses distrib:var="nsuccess"/>
+            <distrib:numberOfTrials distrib:var="nTrials"/>
+            <distrib:populationSize distrib:var="popsize"/>
+          </distrib:hypergeometricDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>

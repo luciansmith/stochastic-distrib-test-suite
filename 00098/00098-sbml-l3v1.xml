@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00098">
     <listOfFunctionDefinitions>
-      <functionDefinition id="upper_truncated_normal">
+      <functionDefinition id="predefined_normal_ubound">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <notanumber/>
           </lambda>
         </math>
         <distrib:drawFromDistribution>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <NormalDistribution definition="http://www.uncertml.org/distributions">
-              <mean>
-                <rVal>0</rVal>
-              </mean>
-              <stddev>
-                <prVal>1.5</prVal>
-              </stddev>
-              <truncationUpperInclusiveBound>
-                <rVal>0.5</rVal>
-              </truncationUpperInclusiveBound>
-            </NormalDistribution>
-          </UncertML>
+          <distrib:normalDistribution>
+            <distrib:truncationUpperBound distrib:value="0.5" distrib:inclusive="true"/>
+            <distrib:mean distrib:value="0"/>
+            <distrib:stddev distrib:value="1.5"/>
+          </distrib:normalDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>
@@ -56,7 +48,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> upper_truncated_normal </ci>
+                <ci> predefined_normal_ubound </ci>
               </apply>
             </math>
           </eventAssignment>

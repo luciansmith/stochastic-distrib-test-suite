@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00056">
     <listOfFunctionDefinitions>
       <functionDefinition id="log_normal">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -19,16 +19,10 @@
             <distrib:distribInput distrib:id="logScale" distrib:index="0"/>
             <distrib:distribInput distrib:id="shape" distrib:index="1"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <LogNormalDistribution definition="http://www.uncertml.org/distributions">
-              <logScale>
-                <var varId="logScale"/>
-              </logScale>
-              <shape>
-                <var varId="shape"/>
-              </shape>
-            </LogNormalDistribution>
-          </UncertML>
+          <distrib:logNormalDistribution>
+            <distrib:shape distrib:var="shape"/>
+            <distrib:logScale distrib:var="logScale"/>
+          </distrib:logNormalDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>

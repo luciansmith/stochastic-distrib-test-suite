@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00074">
     <listOfFunctionDefinitions>
-      <functionDefinition id="truncated_normal_with_variance">
+      <functionDefinition id="normal_trunc">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
@@ -12,10 +12,10 @@
               <ci> variance </ci>
             </bvar>
             <bvar>
-              <ci> truncationLowerInclusiveBound </ci>
+              <ci> lowerBound </ci>
             </bvar>
             <bvar>
-              <ci> truncationUpperInclusiveBound </ci>
+              <ci> upperBound </ci>
             </bvar>
             <notanumber/>
           </lambda>
@@ -24,25 +24,15 @@
           <distrib:listOfDistribInputs>
             <distrib:distribInput distrib:id="mean" distrib:index="0"/>
             <distrib:distribInput distrib:id="variance" distrib:index="1"/>
-            <distrib:distribInput distrib:id="truncationLowerInclusiveBound" distrib:index="2"/>
-            <distrib:distribInput distrib:id="truncationUpperInclusiveBound" distrib:index="3"/>
+            <distrib:distribInput distrib:id="lowerBound" distrib:index="2"/>
+            <distrib:distribInput distrib:id="upperBound" distrib:index="3"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <NormalDistribution definition="http://www.uncertml.org/distributions">
-              <mean>
-                <var varId="mean"/>
-              </mean>
-              <variance>
-                <var varId="variance"/>
-              </variance>
-              <truncationLowerInclusiveBound>
-                <var varId="truncationLowerInclusiveBound"/>
-              </truncationLowerInclusiveBound>
-              <truncationUpperInclusiveBound>
-                <var varId="truncationUpperInclusiveBound"/>
-              </truncationUpperInclusiveBound>
-            </NormalDistribution>
-          </UncertML>
+          <distrib:normalDistribution>
+            <distrib:truncationLowerBound distrib:var="lowerBound" distrib:inclusive="true"/>
+            <distrib:truncationUpperBound distrib:var="upperBound" distrib:inclusive="true"/>
+            <distrib:mean distrib:var="mean"/>
+            <distrib:variance distrib:var="variance"/>
+          </distrib:normalDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>
@@ -77,7 +67,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> truncated_normal_with_variance </ci>
+                <ci> normal_trunc </ci>
                 <cn type="integer"> 0 </cn>
                 <cn> 0.25 </cn>
                 <apply>

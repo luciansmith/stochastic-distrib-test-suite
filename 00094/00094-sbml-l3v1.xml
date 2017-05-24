@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00094">
     <listOfFunctionDefinitions>
-      <functionDefinition id="predefined_gamma">
+      <functionDefinition id="predefined_gamma_scale">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
@@ -15,16 +15,10 @@
           <distrib:listOfDistribInputs>
             <distrib:distribInput distrib:id="shape" distrib:index="0"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <GammaDistribution definition="http://www.uncertml.org/distributions">
-              <shape>
-                <var varId="shape"/>
-              </shape>
-              <scale>
-                <prVal>2</prVal>
-              </scale>
-            </GammaDistribution>
-          </UncertML>
+          <distrib:gammaDistribution>
+            <distrib:shape distrib:var="shape"/>
+            <distrib:scale distrib:value="2"/>
+          </distrib:gammaDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>
@@ -59,7 +53,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> predefined_gamma </ci>
+                <ci> predefined_gamma_scale </ci>
                 <cn type="integer"> 1 </cn>
               </apply>
             </math>

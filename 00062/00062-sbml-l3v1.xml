@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00062">
     <listOfFunctionDefinitions>
       <functionDefinition id="weibull">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -19,16 +19,10 @@
             <distrib:distribInput distrib:id="scale" distrib:index="0"/>
             <distrib:distribInput distrib:id="shape" distrib:index="1"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <WeibullDistribution definition="http://www.uncertml.org/distributions">
-              <scale>
-                <var varId="scale"/>
-              </scale>
-              <shape>
-                <var varId="shape"/>
-              </shape>
-            </WeibullDistribution>
-          </UncertML>
+          <distrib:weibullDistribution>
+            <distrib:scale distrib:var="scale"/>
+            <distrib:shape distrib:var="shape"/>
+          </distrib:weibullDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>

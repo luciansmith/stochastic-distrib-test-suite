@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00041">
     <listOfFunctionDefinitions>
-      <functionDefinition id="normal_with_variance">
+      <functionDefinition id="normal">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
-              <ci> mean </ci>
+              <ci> mu </ci>
             </bvar>
             <bvar>
-              <ci> variance </ci>
+              <ci> v </ci>
             </bvar>
             <notanumber/>
           </lambda>
         </math>
         <distrib:drawFromDistribution>
           <distrib:listOfDistribInputs>
-            <distrib:distribInput distrib:id="mean" distrib:index="0"/>
-            <distrib:distribInput distrib:id="variance" distrib:index="1"/>
+            <distrib:distribInput distrib:id="mu" distrib:index="0"/>
+            <distrib:distribInput distrib:id="v" distrib:index="1"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <NormalDistribution definition="http://www.uncertml.org/distributions">
-              <mean>
-                <var varId="mean"/>
-              </mean>
-              <variance>
-                <var varId="variance"/>
-              </variance>
-            </NormalDistribution>
-          </UncertML>
+          <distrib:normalDistribution>
+            <distrib:mean distrib:var="mu"/>
+            <distrib:variance distrib:var="v"/>
+          </distrib:normalDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>
@@ -63,7 +57,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> normal_with_variance </ci>
+                <ci> normal </ci>
                 <cn type="integer"> 0 </cn>
                 <cn> 1.5 </cn>
               </apply>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
+  <model id="stochastic_case_00078">
     <listOfFunctionDefinitions>
-      <functionDefinition id="truncated_exponential">
+      <functionDefinition id="exponential_uptrunc">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <lambda>
             <bvar>
               <ci> rate </ci>
             </bvar>
             <bvar>
-              <ci> truncationUpperInclusiveBound </ci>
+              <ci> upperBound </ci>
             </bvar>
             <notanumber/>
           </lambda>
@@ -17,18 +17,12 @@
         <distrib:drawFromDistribution>
           <distrib:listOfDistribInputs>
             <distrib:distribInput distrib:id="rate" distrib:index="0"/>
-            <distrib:distribInput distrib:id="truncationUpperInclusiveBound" distrib:index="1"/>
+            <distrib:distribInput distrib:id="upperBound" distrib:index="1"/>
           </distrib:listOfDistribInputs>
-          <UncertML xmlns="http://www.uncertml.org/3.0">
-            <ExponentialDistribution definition="http://www.uncertml.org/distributions">
-              <rate>
-                <var varId="rate"/>
-              </rate>
-              <truncationUpperInclusiveBound>
-                <var varId="truncationUpperInclusiveBound"/>
-              </truncationUpperInclusiveBound>
-            </ExponentialDistribution>
-          </UncertML>
+          <distrib:exponentialDistribution>
+            <distrib:truncationUpperBound distrib:var="upperBound" distrib:inclusive="true"/>
+            <distrib:rate distrib:var="rate"/>
+          </distrib:exponentialDistribution>
         </distrib:drawFromDistribution>
       </functionDefinition>
     </listOfFunctionDefinitions>
@@ -63,7 +57,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> truncated_exponential </ci>
+                <ci> exponential_uptrunc </ci>
                 <cn type="integer"> 1 </cn>
                 <cn> 0.75 </cn>
               </apply>
