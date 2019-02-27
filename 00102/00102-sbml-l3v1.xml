@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
-  <model id="stochastic_case_00102">
-    <listOfFunctionDefinitions>
-      <functionDefinition id="predefined_exponential_bounds">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <notanumber/>
-          </lambda>
-        </math>
-        <distrib:drawFromDistribution>
-          <distrib:exponentialDistribution>
-            <distrib:truncationLowerBound distrib:value="0.25"/>
-            <distrib:truncationUpperBound distrib:value="0.75"/>
-            <distrib:rate distrib:value="1"/>
-          </distrib:exponentialDistribution>
-        </distrib:drawFromDistribution>
-      </functionDefinition>
-    </listOfFunctionDefinitions>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
+  <model>
     <listOfCompartments>
       <compartment id="C" spatialDimensions="3" size="1" constant="true"/>
     </listOfCompartments>
@@ -25,6 +9,9 @@
     </listOfSpecies>
     <listOfParameters>
       <parameter id="t" value="0" constant="false"/>
+      <parameter id="rate" value="1" constant="true"/>
+      <parameter id="truncationLowerBound" value="0.25" constant="true"/>
+      <parameter id="truncationUpperBound" value="0.75" constant="true"/>
     </listOfParameters>
     <listOfRules>
       <rateRule variable="t">
@@ -48,7 +35,10 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> predefined_exponential_bounds </ci>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/exponential"> exponential </csymbol>
+                <ci> rate </ci>
+                <ci> truncationLowerBound </ci>
+                <ci> truncationUpperBound </ci>
               </apply>
             </math>
           </eventAssignment>

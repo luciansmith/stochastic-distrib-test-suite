@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
-  <model id="stochastic_case_00050">
-    <listOfFunctionDefinitions>
-      <functionDefinition id="chisquare">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> degreesOfFreedom </ci>
-            </bvar>
-            <notanumber/>
-          </lambda>
-        </math>
-        <distrib:drawFromDistribution>
-          <distrib:listOfDistribInputs>
-            <distrib:distribInput distrib:id="degreesOfFreedom" distrib:index="0"/>
-          </distrib:listOfDistribInputs>
-          <distrib:chiSquareDistribution>
-            <distrib:degreesOfFreedom distrib:var="degreesOfFreedom"/>
-          </distrib:chiSquareDistribution>
-        </distrib:drawFromDistribution>
-      </functionDefinition>
-    </listOfFunctionDefinitions>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
+  <model>
     <listOfCompartments>
       <compartment id="C" spatialDimensions="3" size="1" constant="true"/>
     </listOfCompartments>
@@ -52,7 +32,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> chisquare </ci>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/chisquare"> chisquare </csymbol>
                 <cn type="integer"> 2 </cn>
               </apply>
             </math>

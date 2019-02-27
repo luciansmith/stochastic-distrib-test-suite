@@ -2,10 +2,10 @@
 
 category:        Test
 synopsis:        DiracDeltaDistribution test
-componentTags:   Compartment, EventNoDelay, FunctionDefinition, Parameter, RateRule, Species, distrib:DrawFromDistribution, distrib:UncommonDistributionContinuous
+componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
 testType:        StochasticTimeCourse
-levels:          3.1
+levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
@@ -16,13 +16,10 @@ The model contains:
 * 1 parameter (t)
 * 1 compartment (C)
 
-It also contains 1 function definition(s):
-; diracDelta(location) : DiracDeltaDistribution from UncertML
-
 There is one event:
 
 [{width:30em,margin: 1em auto}|  *Event*  |  *Trigger*  | *Event Assignments* |
-| E0 | $t >= 0.5$ | $X = diracDelta(2)$ |
+| E0 | $t >= 0.5$ | $X = rayleigh(2)$ |
 |  |  | $t = -0.5$ |]
 
 

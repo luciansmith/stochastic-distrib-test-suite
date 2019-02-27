@@ -2,10 +2,10 @@
 
 category:        Test
 synopsis:        NormalDistribution test
-componentTags:   Compartment, EventNoDelay, FunctionDefinition, Parameter, RateRule, Species, distrib:CommonDistribution, distrib:DrawFromDistribution
-testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter, distrib:HardCodedValues
+componentTags:   Compartment, EventNoDelay, InitialAssignment, Parameter, RateRule, Species
+testTags:        Amount, HasOnlySubstanceUnits, InitialValueReassigned, NonConstantParameter
 testType:        StochasticTimeCourse
-levels:          3.1
+levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
@@ -13,16 +13,13 @@ Test of the NormalDistribution function from UncertML as used in the 'distrib' p
 
 The model contains:
 * 1 species (X)
-* 1 parameter (t)
+* 2 parameters (t, variance)
 * 1 compartment (C)
-
-It also contains 1 function definition(s):
-; predefined_normal_with_variance(mean) : NormalDistribution from UncertML, variance = 1.5
 
 There is one event:
 
 [{width:30em,margin: 1em auto}|  *Event*  |  *Trigger*  | *Event Assignments* |
-| E0 | $t >= 0.5$ | $X = predefined_normal_with_variance(0)$ |
+| E0 | $t >= 0.5$ | $X = normal(0, variance)$ |
 |  |  | $t = -0.5$ |]
 
 
@@ -35,6 +32,7 @@ The initial conditions are as follows:
 
 [{width:35em,margin: 1em auto}|       | *Value* | *Constant* |
 | Initial amount of species X | $0$ | variable |
+| Initial value of parameter variance | $1.5^2$ | constant |
 | Initial value of parameter t | $0$ | variable |
 | Initial volume of compartment 'C' | $1$ | constant |]
 

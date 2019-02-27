@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
-  <model id="stochastic_case_00046">
-    <listOfFunctionDefinitions>
-      <functionDefinition id="gamma">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> shape </ci>
-            </bvar>
-            <bvar>
-              <ci> scale </ci>
-            </bvar>
-            <notanumber/>
-          </lambda>
-        </math>
-        <distrib:drawFromDistribution>
-          <distrib:listOfDistribInputs>
-            <distrib:distribInput distrib:id="shape" distrib:index="0"/>
-            <distrib:distribInput distrib:id="scale" distrib:index="1"/>
-          </distrib:listOfDistribInputs>
-          <distrib:gammaDistribution>
-            <distrib:shape distrib:var="shape"/>
-            <distrib:scale distrib:var="scale"/>
-          </distrib:gammaDistribution>
-        </distrib:drawFromDistribution>
-      </functionDefinition>
-    </listOfFunctionDefinitions>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
+  <model>
     <listOfCompartments>
       <compartment id="C" spatialDimensions="3" size="1" constant="true"/>
     </listOfCompartments>
@@ -57,7 +32,7 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> gamma </ci>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/gamma"> gamma </csymbol>
                 <cn type="integer"> 2 </cn>
                 <cn> 1.1 </cn>
               </apply>

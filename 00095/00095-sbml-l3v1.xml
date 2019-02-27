@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
-  <model id="stochastic_case_00095">
-    <listOfFunctionDefinitions>
-      <functionDefinition id="predefined_gamma_shape">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> scale </ci>
-            </bvar>
-            <notanumber/>
-          </lambda>
-        </math>
-        <distrib:drawFromDistribution>
-          <distrib:listOfDistribInputs>
-            <distrib:distribInput distrib:id="scale" distrib:index="0"/>
-          </distrib:listOfDistribInputs>
-          <distrib:gammaDistribution>
-            <distrib:shape distrib:value="1"/>
-            <distrib:scale distrib:var="scale"/>
-          </distrib:gammaDistribution>
-        </distrib:drawFromDistribution>
-      </functionDefinition>
-    </listOfFunctionDefinitions>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
+  <model>
     <listOfCompartments>
       <compartment id="C" spatialDimensions="3" size="1" constant="true"/>
     </listOfCompartments>
@@ -30,6 +9,7 @@
     </listOfSpecies>
     <listOfParameters>
       <parameter id="t" value="0" constant="false"/>
+      <parameter id="shape" value="1" constant="true"/>
     </listOfParameters>
     <listOfRules>
       <rateRule variable="t">
@@ -53,7 +33,8 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> predefined_gamma_shape </ci>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/gamma"> gamma </csymbol>
+                <ci> shape </ci>
                 <cn type="integer"> 2 </cn>
               </apply>
             </math>

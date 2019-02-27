@@ -2,10 +2,10 @@
 
 category:        Test
 synopsis:        BinomialDistribution test
-componentTags:   Compartment, EventNoDelay, FunctionDefinition, Parameter, RateRule, Species, distrib:DrawFromDistribution, distrib:UncommonDistributionContinuous
+componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
 testType:        StochasticTimeCourse
-levels:          3.1
+levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
@@ -15,9 +15,6 @@ The model contains:
 * 1 species (X)
 * 1 parameter (t)
 * 1 compartment (C)
-
-It also contains 1 function definition(s):
-; binomial(numberOfTrials, probabilityOfSuccess) : BinomialDistribution from UncertML
 
 There is one event:
 

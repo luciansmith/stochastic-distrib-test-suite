@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version2/distrib/version1" level="3" version="1" distrib:required="true">
-  <model id="stochastic_case_00090">
-    <listOfFunctionDefinitions>
-      <functionDefinition id="predefined_normal_mean">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <lambda>
-            <bvar>
-              <ci> stddev </ci>
-            </bvar>
-            <notanumber/>
-          </lambda>
-        </math>
-        <distrib:drawFromDistribution>
-          <distrib:listOfDistribInputs>
-            <distrib:distribInput distrib:id="stddev" distrib:index="0"/>
-          </distrib:listOfDistribInputs>
-          <distrib:normalDistribution>
-            <distrib:mean distrib:value="0"/>
-            <distrib:stddev distrib:var="stddev"/>
-          </distrib:normalDistribution>
-        </distrib:drawFromDistribution>
-      </functionDefinition>
-    </listOfFunctionDefinitions>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
+  <model>
     <listOfCompartments>
       <compartment id="C" spatialDimensions="3" size="1" constant="true"/>
     </listOfCompartments>
@@ -30,6 +9,7 @@
     </listOfSpecies>
     <listOfParameters>
       <parameter id="t" value="0" constant="false"/>
+      <parameter id="mean" value="0" constant="true"/>
     </listOfParameters>
     <listOfRules>
       <rateRule variable="t">
@@ -53,7 +33,8 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <ci> predefined_normal_mean </ci>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/normal"> normal </csymbol>
+                <ci> mean </ci>
                 <cn> 1.5 </cn>
               </apply>
             </math>

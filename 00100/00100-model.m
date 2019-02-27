@@ -2,10 +2,10 @@
 
 category:        Test
 synopsis:        NormalDistribution test
-componentTags:   Compartment, EventNoDelay, FunctionDefinition, Parameter, RateRule, Species, distrib:CommonDistribution, distrib:DrawFromDistribution, distrib:Truncation
-testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter, distrib:HardCodedValues
+componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
+testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
 testType:        StochasticTimeCourse
-levels:          
+levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
@@ -13,16 +13,13 @@ Test of the NormalDistribution function from UncertML as used in the 'distrib' p
 
 The model contains:
 * 1 species (X)
-* 1 parameter (t)
+* 5 parameters (t, mean, stddev, truncationLowerBound, truncationUpperBound)
 * 1 compartment (C)
-
-It also contains 1 function definition(s):
-; lower_truncated_normal() : NormalDistribution from UncertML, mean = 0, stddev = 0.5, truncationLowerInclusiveBound = -0.5, truncationUpperInclusiveBound = 0.5
 
 There is one event:
 
 [{width:30em,margin: 1em auto}|  *Event*  |  *Trigger*  | *Event Assignments* |
-| E0 | $t >= 0.5$ | $X = lower_truncated_normal()$ |
+| E0 | $t >= 0.5$ | $X = normal(mean, stddev, truncationLowerBound, truncationUpperBound)$ |
 |  |  | $t = -0.5$ |]
 
 
@@ -35,6 +32,10 @@ The initial conditions are as follows:
 
 [{width:35em,margin: 1em auto}|       | *Value* | *Constant* |
 | Initial amount of species X | $0$ | variable |
+| Initial value of parameter mean | $0$ | constant |
+| Initial value of parameter stddev | $0.5$ | constant |
+| Initial value of parameter truncationLowerBound | $-0.5$ | constant |
+| Initial value of parameter truncationUpperBound | $0.5$ | constant |
 | Initial value of parameter t | $0$ | variable |
 | Initial volume of compartment 'C' | $1$ | constant |]
 

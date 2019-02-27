@@ -2,10 +2,10 @@
 
 category:        Test
 synopsis:        NormalDistribution test with lower inclusive bound
-componentTags:   Compartment, EventNoDelay, FunctionDefinition, Parameter, RateRule, Species, distrib:CommonDistribution, distrib:DrawFromDistribution, distrib:Truncation
+componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
 testType:        StochasticTimeCourse
-levels:          3.1
+levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
@@ -16,13 +16,10 @@ The model contains:
 * 1 parameter (t)
 * 1 compartment (C)
 
-It also contains 1 function definition(s):
-; lower_truncated_normal(mean, stddev, truncationLowerInclusiveBound) : NormalDistribution from UncertML
-
 There is one event:
 
 [{width:30em,margin: 1em auto}|  *Event*  |  *Trigger*  | *Event Assignments* |
-| E0 | $t >= 0.5$ | $X = lower_truncated_normal(0, 1.5, 0.5)$ |
+| E0 | $t >= 0.5$ | $X = normal(0, 1.5, 0.5, INF)$ |
 |  |  | $t = -0.5$ |]
 
 
