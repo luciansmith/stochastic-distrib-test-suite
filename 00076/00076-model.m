@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the NormalDistribution function from UncertML as used in the 'distrib' package, with truncation bound that are both greater than the mean.
+Test of the NormalDistribution function from the 'distrib' package, with truncation bound that are both greater than the mean.
 
 The model contains:
 * 1 species (X)

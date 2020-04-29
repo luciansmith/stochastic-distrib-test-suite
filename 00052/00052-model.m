@@ -1,7 +1,7 @@
 (*
 
 category:        Test
-synopsis:        DiracDeltaDistribution test
+synopsis:        Rayleigh Distribution test
 componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
 testType:        StochasticTimeCourse
@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the DiracDeltaDistribution function from UncertML as used in the 'distrib' package.
+Test of the Rayleigh distribution function from the 'distrib' package.
 
 The model contains:
 * 1 species (X)

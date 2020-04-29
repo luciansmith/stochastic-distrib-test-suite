@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the LaplaceDistribution function with a single argument from UncertML as used in the 'distrib' package.  The 'location' defaults to 0 in this situation.
+Test of the LaplaceDistribution function with a single argument from the 'distrib' package.  The 'location' defaults to 0 in this situation.
 
 The model contains:
 * 1 species (X)

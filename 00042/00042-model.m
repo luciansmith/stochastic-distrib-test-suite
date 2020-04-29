@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the UniformDistribution function from UncertML as used in the 'distrib' package.
+Test of the UniformDistribution function from the 'distrib' package.
 
 The model contains:
 * 1 species (X)

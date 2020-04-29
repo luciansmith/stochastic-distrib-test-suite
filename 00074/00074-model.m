@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the NormalDistribution function from UncertML as used in the 'distrib' package with upper and lower bounds, and defined with variance instead of standard deviation.
+Test of the NormalDistribution function from the 'distrib' package with upper and lower bounds, and defined with variance instead of standard deviation.
 
 The model contains:
 * 1 species (X)

@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the ExponentialDistribution function from UncertML as used in the 'distrib' package, with both an upper and a lower inclusive bound.
+Test of the ExponentialDistribution function from the 'distrib' package, with both an upper and a lower inclusive bound.
 
 The model contains:
 * 1 species (X)

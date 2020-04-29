@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the HypergeometricDistribution function from UncertML as used in the 'distrib' package.
+Test of the normal distribution function from the 'distrib' package, with a constant mean and variable standard deviation.
 
 The model contains:
 * 1 species (X)

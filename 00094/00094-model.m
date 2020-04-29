@@ -1,7 +1,7 @@
 (*
 
 category:        Test
-synopsis:        HypergeometricDistribution test
+synopsis:        Gamma distribution test
 componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
 testType:        StochasticTimeCourse
@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the HypergeometricDistribution function from UncertML as used in the 'distrib' package.
+Test of the gamma distribution function from the 'distrib' package, with a constant shape and variable scale.
 
 The model contains:
 * 1 species (X)

@@ -9,7 +9,7 @@ levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the CauchyDistribution function from UncertML as used in the 'distrib' package. The Cauchy distribution is known for not having a defined mean and variance.  As a result, the median (the location parameter) is used as the expected mean in the results file, and the standard deviation is not requested at all.  The mean and standard deviation could probably be estimated at some point, but are currently unknown.
+Test of the CauchyDistribution function from the 'distrib' package. The Cauchy distribution is known for not having a defined mean and variance.  As a result, the median (the location parameter) is used as the expected mean in the results file, and the standard deviation is not requested at all.  The mean and standard deviation could probably be estimated at some point, but are currently unknown.
 
 The model contains:
 * 1 species (X)
