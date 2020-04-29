@@ -39,8 +39,8 @@
                 <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/normal"> normal </csymbol>
                 <ci> mean </ci>
                 <ci> stddev </ci>
-                <ci> truncationUpperBound </ci>
                 <ci> truncationLowerBound </ci>
+                <ci> truncationUpperBound </ci>
               </apply>
             </math>
           </eventAssignment>
