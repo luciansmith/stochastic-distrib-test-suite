@@ -19,7 +19,7 @@ The model contains:
 There is one event:
 
 [{width:30em,margin: 1em auto}|  *Event*  |  *Trigger*  | *Event Assignments* |
-| E0 | $t >= 0.5$ | $X = normal(0, variance, -0.5, 0.5)$ |
+| E0 | $t >= 0.5$ | $X = normal(0, sqrt(variance), -0.5, 0.5)$ |
 |  |  | $t = -0.5$ |]
 
 
@@ -32,7 +32,7 @@ The initial conditions are as follows:
 
 [{width:35em,margin: 1em auto}|       | *Value* | *Constant* |
 | Initial amount of species X | $0$ | variable |
-| Initial value of parameter variance | $0.25^2$ | constant |
+| Initial value of parameter variance | $0.25$ | constant |
 | Initial value of parameter t | $0$ | variable |
 | Initial volume of compartment 'C' | $1$ | constant |]
 

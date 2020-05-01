@@ -1,7 +1,7 @@
 (*
 
 category:        Test
-synopsis:        HypergeometricDistribution test
+synopsis:        UniformDistribution test
 componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
 testType:        StochasticTimeCourse

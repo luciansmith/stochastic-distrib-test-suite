@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by libAntimony version v2.12.0 with libSBML version 5.18.1. -->
 <sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="1" distrib:required="true">
-  <model>
+  <model metaid="doc0" id="doc0">
     <listOfCompartments>
       <compartment id="C" spatialDimensions="3" size="1" constant="true"/>
     </listOfCompartments>
@@ -10,19 +11,8 @@
     <listOfParameters>
       <parameter id="t" value="0" constant="false"/>
       <parameter id="mean" value="0" constant="true"/>
-      <parameter id="variance" constant="true"/>
+      <parameter id="variance" value="1.5" constant="true"/>
     </listOfParameters>
-    <listOfInitialAssignments>
-      <initialAssignment symbol="variance">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <power/>
-            <cn> 1.5 </cn>
-            <cn type="integer"> 2 </cn>
-          </apply>
-        </math>
-      </initialAssignment>
-    </listOfInitialAssignments>
     <listOfRules>
       <rateRule variable="t">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -47,16 +37,19 @@
               <apply>
                 <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/normal"> normal </csymbol>
                 <ci> mean </ci>
-                <ci> variance </ci>
+                <apply>
+                  <root/>
+                  <degree>
+                    <cn type="integer"> 2 </cn>
+                  </degree>
+                  <ci> variance </ci>
+                </apply>
               </apply>
             </math>
           </eventAssignment>
           <eventAssignment variable="t">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
-              <apply>
-                <minus/>
-                <cn> 0.5 </cn>
-              </apply>
+              <cn> -0.5 </cn>
             </math>
           </eventAssignment>
         </listOfEventAssignments>

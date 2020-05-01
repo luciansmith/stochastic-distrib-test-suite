@@ -19,7 +19,7 @@ The model contains:
 There is one event:
 
 [{width:30em,margin: 1em auto}|  *Event*  |  *Trigger*  | *Event Assignments* |
-| E0 | $t >= 0.5$ | $X = normal(mean, 1.5)$ |
+| E0 | $t >= 0.5$ | $X = normal(mean, sqrt(1.5))$ |
 |  |  | $t = -0.5$ |]
 
 

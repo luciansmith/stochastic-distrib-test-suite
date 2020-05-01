@@ -8,4 +8,4 @@ amount: X
 concentration: 
 output: X-mean, X-sd
 meanRange: (-3, 3)
-sdRange: (-3, 3)
+sdRange: (-5, 5)
