@@ -4,7 +4,7 @@ category:        Test
 synopsis:        ExponentialDistribution test with a lower bound
 componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
-testType:        StochasticTimeCourse
+testType:        StatisticalDistribution
 levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib

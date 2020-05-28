@@ -1,15 +1,15 @@
 (*
 
 category:        Test
-synopsis:        LaplaceDistribution test (one argument)
+synopsis:        BinomialDistribution test
 componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
-testType:        StochasticTimeCourse
+testType:        StatisticalDistribution
 levels:          3.1, 3.2
 generatedBy:     Analytic
 packagesPresent: distrib
 
-Test of the LaplaceDistribution function with a single argument from the 'distrib' package.  The 'location' defaults to 0 in this situation.
+Test of the BinomialDistribution function from the 'distrib' package.
 
 The model contains:
 * 1 species (X)
@@ -19,7 +19,7 @@ The model contains:
 There is one event:
 
 [{width:30em,margin: 1em auto}|  *Event*  |  *Trigger*  | *Event Assignments* |
-| E0 | $t >= 0.5$ | $X = laplace(2)$ |
+| E0 | $t >= 0.5$ | $X = binomial(100, 0.2)$ |
 |  |  | $t = -0.5$ |]
 
 

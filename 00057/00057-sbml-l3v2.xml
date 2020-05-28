@@ -32,8 +32,9 @@
           <eventAssignment variable="X">
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <apply>
-                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/laplace"> laplace </csymbol>
-                <cn type="integer"> 2 </cn>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/binomial"> binomial </csymbol>
+                <cn type="integer"> 100 </cn>
+                <cn> 0.2 </cn>
               </apply>
             </math>
           </eventAssignment>

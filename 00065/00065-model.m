@@ -1,15 +1,15 @@
 (*
 
 category:        Test
-synopsis:        BinomialDistribution test
+synopsis:        PoissonDistribution test with truncation
 componentTags:   Compartment, EventNoDelay, Parameter, RateRule, Species
 testTags:        Amount, HasOnlySubstanceUnits, NonConstantParameter
-testType:        StochasticTimeCourse
+testType:        StatisticalDistribution
 levels:          3.1, 3.2
-generatedBy:     Analytic
+generatedBy:     Numeric
 packagesPresent: distrib
 
-Test of the BinomialDistribution function from the 'distrib' package.
+Test of the PoissonDistribution function from the 'distrib' package.
 
 The model contains:
 * 1 species (X)
@@ -19,7 +19,7 @@ The model contains:
 There is one event:
 
 [{width:30em,margin: 1em auto}|  *Event*  |  *Trigger*  | *Event Assignments* |
-| E0 | $t >= 0.5$ | $X = binomial(100, 0.2)$ |
+                              | E0 | $t >= 0.5$ | $X = poisson(1.5, 2, 18)$ |
 |  |  | $t = -0.5$ |]
 
 
@@ -34,8 +34,5 @@ The initial conditions are as follows:
 | Initial amount of species X | $0$ | variable |
 | Initial value of parameter t | $0$ | variable |
 | Initial volume of compartment 'C' | $1$ | constant |]
-
-Note: The test data for this model was generated from an analytical
-solution of the system of equations.
 
 *)
